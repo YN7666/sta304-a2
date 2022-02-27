@@ -14,20 +14,28 @@ library(readr)
 library(tidyverse)
 library(ggplot2)
 library(haven)
-library(gcookbook)#plot graph
+library(gcookbook)
 library(ggrepel)
 library(gtrendsR)
 library(usmap)
 library(dplyr)
 library(car)
 library(patchwork)
+library(RCurl)
 ```
-
 ```{r, include=FALSE}
-figs_1_2_3 <- read_csv("inputs/data/figs_1_2_3.csv")
-age_race_comp_seer <- read_dta("inputs/data/age_race_comp_seer.dta")
-nchs_births_pop_1990_2019 <- read_dta("inputs/data/nchs_births_pop_1990_2019.dta")
-figs_2a_2b <- read_csv("inputs/data/figs_2a_2b.csv")
+download.file("https://github.com/YN7666/sta304-a2/blob/555b162a0251174fce976b5f3915cb4c56609e2b/inputs/data/figs_1_2_3.csv", 
+    destfile = "figs_1_2_3x.csv", method = "curl")
+download.file("https://github.com/YN7666/sta304-a2/blob/555b162a0251174fce976b5f3915cb4c56609e2b/inputs/data/age_race_comp_seer.dta",
+              destfile = "age_race_comp_seerx.dta", method = "curl")
+download.file("https://github.com/YN7666/sta304-a2/blob/555b162a0251174fce976b5f3915cb4c56609e2b/inputs/data/nchs_births_pop_1990_2019.dta",
+              destfile = "nchs_births_pop_1990_2019x.dta", method = "curl")
+download.file("https://github.com/YN7666/sta304-a2/blob/555b162a0251174fce976b5f3915cb4c56609e2b/inputs/data/figs_2a_2b.csv",
+              destfile = "figs_2a_2bx.csv", method = "curl")
+figs_1_2_3                <- read_csv("figs_1_2_3x.csv")
+age_race_comp_seer        <- read_dta("age_race_comp_seerx.dta")
+nchs_births_pop_1990_2019 <- read_dta("nchs_births_pop_1990_2019x.dta")
+figs_2a_2b                <- read_csv("figs_2a_2bx.csv")
 ```
 
 
