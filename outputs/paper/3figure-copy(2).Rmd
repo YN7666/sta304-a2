@@ -2,11 +2,9 @@
 title: "Examination for the Decrease in US Birth Rate After the Great Recession: the Change of Hispanic Fertility Rate and Education Convergence Behind It"
 author: "Zelong Yu, Yiyi Ren, Zihan Jin"
 date: "02/22/2022"
-output: 
-  pdf_document: 
-    latex_engine: xelatex
+output: pdf_document
 ---
-aaa
+
 
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
