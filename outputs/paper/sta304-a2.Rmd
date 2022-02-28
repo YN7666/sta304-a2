@@ -128,14 +128,14 @@ Figure 3 is a state-level US map that indicates the changes in birth rates among
 ggplot(figs_1_2_3, aes(x=year, y = brate_all)) +
 geom_line()+ 
   theme_classic() +
-  labs(y = "Births per 1,000 women age 15-44", title = "Trend in US Birth Rates")
+  labs(y = "Births per 1,000 women age 15-44", title = "Fig.2: Trend in US Birth Rates")
 ```
 
-Figure 1 reflects trends in U.S. fertility from 1980 to 2020, using data on the universe of US births from the Vital Statistics system. It can be seen that the overall fertility rate in the United States is on a downward trend, from about 68% in 1980 to about 56% in 2020. During this time, there were two obvious fluctuations, near the year 1990 and 2007, respectively. The decline around 1990 began to pick up around 1996; the fertility decline that began in 2007, however, was sharp and persistent. This paper takes the fertility decline since 2007 as the research subject and aims to explore the potential strong correlation factors behind it. We retrieved major events, including politics, economy, and culture, during this period as potential causes of the great turning point in 2007, and found that the great recession was one of the significant events.
+Figure 2 reflects trends in U.S. fertility from 1980 to 2020, using data on the universe of US births from the Vital Statistics system. It can be seen that the overall fertility rate in the United States is on a downward trend, from about 68% in 1980 to about 56% in 2020. During this time, there were two obvious fluctuations, near the year 1990 and 2007, respectively. The decline around 1990 began to pick up around 1996; the fertility decline that began in 2007, however, was sharp and persistent. This paper takes the fertility decline since 2007 as the research subject and aims to explore the potential strong correlation factors behind it. We retrieved major events, including politics, economy, and culture, during this period as potential causes of the great turning point in 2007, and found that the great recession was one of the significant events.
 
 The great recession brought enormous economic stress to people at the time: Between 2007 and 2010, the unemployment rate rose from 4.6% to 9.6%, about 5 percentage points. The appearance of a newborn will bring new expenses to a family, but at the same time, it can also bring economic income as a new labor force for the family in the near future. There is a lot of literature trying to define the economic impact on the birth rate. Some scholars mentioned that increased income leads people to choose to have more children. However, high economic prosperity also raises the standards and costs of raising children, such as in education and quality of life [@LM]. Others draw conclusions based on this fact that people tend to have fewer children while ensuring high-quality investment in each child, as society grows richer [@GH]. Therefore, without quantitative analysis, we cannot confirm the specific impact of the Great Recession on U.S. birth rates.
 
-To be sure, however, the birth rate continued to decline after the recession ended. As can be seen from figure 1, after 2010, the birth rate was still falling. Although a rebound occurred in 2013, it is too slight and brief to reverse the overall sharp decline. Therefore, it can be concluded that factors other than the Great Recession played a role in the continued decline in the birth rate since 2007.
+To be sure, however, the birth rate continued to decline after the recession ended. As can be seen from figure 2, after 2010, the birth rate was still falling. Although a rebound occurred in 2013, it is too slight and brief to reverse the overall sharp decline. Therefore, it can be concluded that factors other than the Great Recession played a role in the continued decline in the birth rate since 2007.
 
 ## Trends in Birth Rates by Population Subgroup
 ```{r,echo=FALSE,warning=FALSE}
@@ -148,7 +148,7 @@ gfa <- ggplot(dfa, aes(x=year, y = Births_per_1000_women, group = age_group, col
   geom_vline(xintercept = 2007,linetype="dashed") + 
   geom_text(aes(x=2009, label="2007", y=-5), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) + 
   theme_classic() +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Five-year age group")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3a: Five-year age group")
 ```
 
 
@@ -162,7 +162,7 @@ gfb<- ggplot(dfb, aes(x=year, y = Births_per_1000_women)) +
   geom_vline(xintercept = 2007,linetype="dashed") + 
   theme_classic() +
   geom_text(aes(x=2009, label="2007", y=4), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Race and ethnicity (ages 15-44)")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3b: Race and ethnicity (ages 15-44)")
 ```
 
 ```{r,echo=FALSE,error=FALSE,warning=FALSE}
@@ -182,7 +182,7 @@ gfc <- dfc %>% ggplot( aes(x=year, y = Births_per_1000_women)) +
   geom_vline(xintercept = 2007,linetype="dashed") + 
   geom_text(aes(x=2009, label="2007", y=5), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) +
   theme_classic() +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Hispanic subpopulation (ages 15-44)")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3c: Hispanic subpopulation (ages 15-44)")
 ```
 
 ```{r,echo=FALSE,error=FALSE,warning=FALSE}
@@ -202,7 +202,7 @@ gfd<- dfd %>% ggplot( aes(x=year, y = Births_per_1000_women)) +
   geom_vline(xintercept = 2007,linetype="dashed") + 
   geom_text(aes(x=2009, label="2007", y=5), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) +
   theme_classic() +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Mother's level of education (ages 20-44)")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3d: Mother's level of education (ages 20-44)")
 ```
 
 ```{r,echo=FALSE,error=FALSE,warning=FALSE}
@@ -220,7 +220,7 @@ gfe <- dfe %>% ggplot( aes(x=year, y = Births_per_1000_women)) +
   geom_vline(xintercept = 2007,linetype="dashed") + 
   geom_text(aes(x=2009, label="2007", y=4), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) +
   theme_classic() +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Marital status (ages 15-44)")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3e: Marital status (ages 15-44)")
 ```
 
 ```{r,echo=FALSE,error=FALSE,,warning=FALSE, fig.height = 15, fig.width = 8}
@@ -246,7 +246,7 @@ gff <-ggplot(dff, aes(x=year, y = Births_per_1000_women)) +
   geom_vline(xintercept = 2007,linetype="dashed") + 
   geom_text(aes(x=2009, label="2007", y=1), colour="darkgreen", angle=0, vjust = 1.2, text=element_text(size=5)) +
   theme_classic() +
-  labs(y = "Births per 1,000 women in relevant population subgroup", title="Parity (ages 15-44)")
+  labs(y = "Births per 1,000 women in relevant population subgroup", title="Fig.3f: Parity (ages 15-44)")
 
 ```
 
@@ -257,20 +257,20 @@ gff <-ggplot(dff, aes(x=year, y = Births_per_1000_women)) +
 (gfe | gff) 
 ```
 
-In Figure 2 panel A, we draw the change in the birth rate of each year from 1980 to 2020, between 6 age groups. The change in births between age groups 15-19 is the most distinct pattern in all 6 lines. The births per 1,000 women show a downward trend after reaching a peak in the year 1991. At around the year of 2007, the rate of decline slowed for around 3 years before speeding up in the following years. Women from the age groups of 20-24, and 25-29, both experienced a decrease in births. The birth rate of elder women (age 30-34, age 35-39, and age 40-44) rose gradually during the 40 years. However, these increases in birth among elder women are not even close to compensating for the significant reductions in births in younger age groups. With the increasing average levels of education becoming higher, society is more prosperous, young people know more about contraception, and the rate of adolescent pregnancy has fallen [@MHJ].
+In Figure 3 panel A, we draw the change in the birth rate of each year from 1980 to 2020, between 6 age groups. The change in births between age groups 15-19 is the most distinct pattern in all 6 lines. The births per 1,000 women show a downward trend after reaching a peak in the year 1991. At around the year of 2007, the rate of decline slowed for around 3 years before speeding up in the following years. Women from the age groups of 20-24, and 25-29, both experienced a decrease in births. The birth rate of elder women (age 30-34, age 35-39, and age 40-44) rose gradually during the 40 years. However, these increases in birth among elder women are not even close to compensating for the significant reductions in births in younger age groups. With the increasing average levels of education becoming higher, society is more prosperous, young people know more about contraception, and the rate of adolescent pregnancy has fallen [@MHJ].
 
 
-Panel B of Figure 2 investigates birth rates by race. We see from the graph that the birth rate of Hispanics experienced the most significant drop. The birth rate of Hispanics drops from 97.4 in 2007, to 62.8 by 2020. Birth rates for non-Hispanic Black and White women declined as well, but by considerably lower percentages. When the Great Recession hit, race and ethnicity had a significant impact on birth rates. By 2020, racial and ethnic inequalities in birth rates will still exist, but they will be significantly reduced. The graph shows a pattern of fertility convergence among ethnicity after 2007. Fertility convergence is strongly associated with educational convergence. The significant improvements in educational attainment across immigrant generations have become a driving factor of fertility convergence among ethnicities [@ES]. A possible explanation for this phenomenon is that the Great Recession resulted in educational convergence among races, which further led to fertility convergence among Hispanic, non-Hispanic Black and White.
+Panel B of Figure 3 investigates birth rates by race. We see from the graph that the birth rate of Hispanics experienced the most significant drop. The birth rate of Hispanics drops from 97.4 in 2007, to 62.8 by 2020. Birth rates for non-Hispanic Black and White women declined as well, but by considerably lower percentages. When the Great Recession hit, race and ethnicity had a significant impact on birth rates. By 2020, racial and ethnic inequalities in birth rates will still exist, but they will be significantly reduced. The graph shows a pattern of fertility convergence among ethnicity after 2007. Fertility convergence is strongly associated with educational convergence. The significant improvements in educational attainment across immigrant generations have become a driving factor of fertility convergence among ethnicities [@ES]. A possible explanation for this phenomenon is that the Great Recession resulted in educational convergence among races, which further led to fertility convergence among Hispanic, non-Hispanic Black and White.
 
 
-From Figure 2 panel C, it’s not hard to see that Hispanics were the group whose fertility rate is decreasing the most. Thus, we analyzed the trend of the Hispanic subgroup separately in panel C. Specifically, we examine birth rates among native-born and foreign-born Hispanics separately, as well as Hispanics by country of origin, Mexican and non-Mexican. The birth rate of foreign-born Mexican and native-born Mexican both dropped to a large extent. While the birth rate non-Mexican Hispanic women only fluctuates in a small range. The hard drop in Mexican contributes to the significant decline of the Hispanic subpopulation birth rate. The figure shows that the birth rate of foreign-born Mexican is higher than that of native-born Mexican, which supports assimilation. 
+From Figure 3 panel C, it’s not hard to see that Hispanics were the group whose fertility rate is decreasing the most. Thus, we analyzed the trend of the Hispanic subgroup separately in panel C. Specifically, we examine birth rates among native-born and foreign-born Hispanics separately, as well as Hispanics by country of origin, Mexican and non-Mexican. The birth rate of foreign-born Mexican and native-born Mexican both dropped to a large extent. While the birth rate non-Mexican Hispanic women only fluctuates in a small range. The hard drop in Mexican contributes to the significant decline of the Hispanic subpopulation birth rate. The figure shows that the birth rate of foreign-born Mexican is higher than that of native-born Mexican, which supports assimilation. 
 
-Following that, we'll look at birth rates for four different maternal education groups: those with less than a high school diploma, those with a high school diploma, those with some college diploma, and those with a four-year college diploma or more. Because many teenagers have not completed their education, we excluded them from this study. The most recently educated and least educated women, women with four-year college degrees (36.3 percent of women aged 20 to 44 in 2018) and women without a high school diploma (8.1 percent of these women), saw the highest decreases in birth rates, as seen in Group D in Figure 2. Between 2007 and 2019, the birth rate for college-educated women declined from 72.5 to 59.4 per 1,000, while it fell from 119 to 97.5 for women without a high school diploma. Since 2007, both groups of women, with a high school diploma and those who have gone to some college, have had very constant birth rates.
+Following that, we'll look at birth rates for four different maternal education groups: those with less than a high school diploma, those with a high school diploma, those with some college diploma, and those with a four-year college diploma or more. Because many teenagers have not completed their education, we excluded them from this study. The most recently educated and least educated women, women with four-year college degrees (36.3 percent of women aged 20 to 44 in 2018) and women without a high school diploma (8.1 percent of these women), saw the highest decreases in birth rates, as seen in Group D in Figure 3. Between 2007 and 2019, the birth rate for college-educated women declined from 72.5 to 59.4 per 1,000, while it fell from 119 to 97.5 for women without a high school diploma. Since 2007, both groups of women, with a high school diploma and those who have gone to some college, have had very constant birth rates.
 
-We then want to investigate if the marital status of mothers would influence the birth rate. Panel E of Figure 2 separately plots births by two maternal groups, married and unmarried. From 1980 to around 1994, the births of two maternal groups experienced substantially different trends. The births of both groups of women slightly flatulated between the year 1995 to 2007. Nevertheless, between 2007 and 2010, the birth rate of married women and unmarried women went down by similar extents. Starting from 2010, the births given by married women in the US society rose again after a fall. However, the number of births of unmarried women has been dropping continuously since 2010. After 2007, although there exists a difference between the change of birth rate in the between years, the overall patterns of the two maternal marital status groups are similar, each experiencing a small drop. Hence, it is eligible to conclude that marriage status only influences the birth rate in a small range.
+We then want to investigate if the marital status of mothers would influence the birth rate. Panel E of Figure 3 separately plots births by two maternal groups, married and unmarried. From 1980 to around 1994, the births of two maternal groups experienced substantially different trends. The births of both groups of women slightly flatulated between the year 1995 to 2007. Nevertheless, between 2007 and 2010, the birth rate of married women and unmarried women went down by similar extents. Starting from 2010, the births given by married women in the US society rose again after a fall. However, the number of births of unmarried women has been dropping continuously since 2010. After 2007, although there exists a difference between the change of birth rate in the between years, the overall patterns of the two maternal marital status groups are similar, each experiencing a small drop. Hence, it is eligible to conclude that marriage status only influences the birth rate in a small range.
 
 
-Panel F of figure 2 depicts parity of the number of women who give birth per 1,000 women, where parity refers to the number of times that a specific woman has given birth to a fetus. The line of the First birth has the most significant change, while the line for women who have their fourth or more birth, which suggests that the drop in births after 2007 is due to a decrease in starting to have kids rather than women not willing to have larger families.
+Panel F of figure 3 depicts parity of the number of women who give birth per 1,000 women, where parity refers to the number of times that a specific woman has given birth to a fetus. The line of the First birth has the most significant change, while the line for women who have their fourth or more birth, which suggests that the drop in births after 2007 is due to a decrease in starting to have kids rather than women not willing to have larger families.
 
 To further explore if the above attributes indeed contribute to the drop in birth rate, we try to show the trend of change in birth rate by geographical division.
 
@@ -296,18 +296,18 @@ p <- plot_usmap(data = state_births_finn, values = "diff", color = "red", labels
                          name = "percent change of birth rate", label = scales::comma) + 
   theme(legend.position = "right") + 
   theme(panel.background = element_rect(colour = "black")) + 
-  labs(title = "Change in Birth Rates by State between 2004-2008 and 2015-2019")
+  labs(title = "Fig.4: Change in Birth Rates by State between 2004-2008 and 2015-2019")
 p$layers[[2]]$aes_params$size <- 3
 print(p)
 ```
 
-There are many reasons for the decline in fertility, such as the increase in the effectiveness of contraceptive methods, the increase in social competition pressure, and the improvement of women's social rights. But which of these could explain the long-term and persistent fall in birth rates of the US after 2007 remains to be determined. Figure 3 depicts the state-by-state trends in the U.S. population, measuring changes in birth rates by calculating population changes over two five-year periods before and after the great recession (2004-2008, 2015-2019). By taking five-year averages to measure population status and calculating birth trends across more than 10 years, we can somewhat circumvent reasons for short-term fluctuations.
+There are many reasons for the decline in fertility, such as the increase in the effectiveness of contraceptive methods, the increase in social competition pressure, and the improvement of women's social rights. But which of these could explain the long-term and persistent fall in birth rates of the US after 2007 remains to be determined. Figure 4 depicts the state-by-state trends in the U.S. population, measuring changes in birth rates by calculating population changes over two five-year periods before and after the great recession (2004-2008, 2015-2019). By taking five-year averages to measure population status and calculating birth trends across more than 10 years, we can somewhat circumvent reasons for short-term fluctuations.
 
-As shown in Figure 3, the overall fertility rate in the United States is on a downward trend. Except for the positive fertility growth rate in North Dakota, all other states are in negative growth. Fertility declines in most states ranged from zero to five percentage points, followed by declines of more than ten percentage points. Among them, the overall decline in fertility in the western and southwestern states of the United States was larger, with OR, ID, CA, NV, UT, CO, AZ, NM, and TX fertility declining by more than ten percentage points. By contrast, the northern and eastern states saw smaller declines in fertility, mostly zero to five percentage points decline. And one possible explanation for the rising birth rate in North Dakota is that the state has experienced a fracking boom over the years, which other studies suggest has increased birth rates [@MR].
+As shown in Figure 4, the overall fertility rate in the United States is on a downward trend. Except for the positive fertility growth rate in North Dakota, all other states are in negative growth. Fertility declines in most states ranged from zero to five percentage points, followed by declines of more than ten percentage points. Among them, the overall decline in fertility in the western and southwestern states of the United States was larger, with OR, ID, CA, NV, UT, CO, AZ, NM, and TX fertility declining by more than ten percentage points. By contrast, the northern and eastern states saw smaller declines in fertility, mostly zero to five percentage points decline. And one possible explanation for the rising birth rate in North Dakota is that the state has experienced a fracking boom over the years, which other studies suggest has increased birth rates [@MR].
 
-The Southwest and Western states saw the biggest drop in birth rates. In much of the region, the Hispanic population is sizable, consistent with a sharp drop in the birth rate for Hispanic women. We know from Figure 2 that this is due to a decline in the birth rate of native and foreign-born Mexicans.
+The Southwest and Western states saw the biggest drop in birth rates. In much of the region, the Hispanic population is sizable, consistent with a sharp drop in the birth rate for Hispanic women. We know from Figure 3 that this is due to a decline in the birth rate of native and foreign-born Mexicans.
 
-Thus, the importance of declining birthrates for Hispanic women is corroborated by state-year analysis as a potential long-term and slow meaningful effect, rather than a short-term disturbance, as one of the reasons for the continued decline in U.S. fertility rates after 2007. It is worth noting that, according to the conclusions drawn from Figure 2, Hispanic women's fertility has experienced convergence, and a study shows that education convergence is the main reason behind the fertility convergence [@ES]. Therefore, we can infer that education change can be considered as a potential reason for the decline in the US fertility rate after 2007.
+Thus, the importance of declining birthrates for Hispanic women is corroborated by state-year analysis as a potential long-term and slow meaningful effect, rather than a short-term disturbance, as one of the reasons for the continued decline in U.S. fertility rates after 2007. It is worth noting that, according to the conclusions drawn from Figure 3, Hispanic women's fertility has experienced convergence, and a study shows that education convergence is the main reason behind the fertility convergence [@ES]. Therefore, we can infer that education change can be considered as a potential reason for the decline in the US fertility rate after 2007.
 
 
 # Discussion
@@ -330,7 +330,7 @@ According to the relevant literature, the continuous decline in the fertility ra
 3. Female education helps stabilize fertility rates
 
 
-Meanwhile, there are many factors affecting the birth rate, such as age, marital status, education level, as well as social and political environment factors, including the government's attention to women of childbearing age, infant welfare and other factors. In addition to focusing on fertility rates and ethnic and cultural linkages, we also recognized that education and literacy levels largely determine a country's stable development. As can be seen from figure3, from 2007 to 2020, the fertility rate of women with higher education levels is significantly lower than that of women with lower education levels. Among them, women with some college education have the lowest fertility rate, followed by high school and college graduates, while women with no high school degree have the highest fertility rate. We can't define fertility in terms of good or bad. But it is certain that a stable fertility level can maintain the stable development and order of the society, while sharp changes in infertility may bring a huge burden and impact to the society. Among women with no high school degrees, fertility rates rose sharply before the economic crisis and fell sharply after it. This may be because of the family's financial income changes and lacking long-term plans, which increases the potential hidden trouble of welfare policy and social security. In contrast, the fertility rate of women of childbearing age with a high school education or above has remained stable with a small overall change, indicating that the social burden of family payments, infant education, and upbringing has not fluctuated significantly.
+Meanwhile, there are many factors affecting the birth rate, such as age, marital status, education level, as well as social and political environment factors, including the government's attention to women of childbearing age, infant welfare and other factors. In addition to focusing on fertility rates and ethnic and cultural linkages, we also recognized that education and literacy levels largely determine a country's stable development. As can be seen from figure4, from 2007 to 2020, the fertility rate of women with higher education levels is significantly lower than that of women with lower education levels. Among them, women with some college education have the lowest fertility rate, followed by high school and college graduates, while women with no high school degree have the highest fertility rate. We can't define fertility in terms of good or bad. But it is certain that a stable fertility level can maintain the stable development and order of the society, while sharp changes in infertility may bring a huge burden and impact to the society. Among women with no high school degrees, fertility rates rose sharply before the economic crisis and fell sharply after it. This may be because of the family's financial income changes and lacking long-term plans, which increases the potential hidden trouble of welfare policy and social security. In contrast, the fertility rate of women of childbearing age with a high school education or above has remained stable with a small overall change, indicating that the social burden of family payments, infant education, and upbringing has not fluctuated significantly.
 
 
 4. Social and technological progress is necessary for a long-term increase in fertility
@@ -349,7 +349,7 @@ However, the impact of a subgroup on the overall population depends not only on 
 
 2. Uncertain Data Usage
 
-The todo list in readme file for figure 3 has different values as it shows in the final product report. The readme file indicates the second period as from 2015 to 2018, but the report shows the time period between 2015 to 2019. If we use 2015-2018 instead of 2015-2019, the difference between the rate of change of the first period and second period could be larger.
+The todo list in readme file for figure 4 has different values as it shows in the final product report. The readme file indicates the second period as from 2015 to 2018, but the report shows the time period between 2015 to 2019. If we use 2015-2018 instead of 2015-2019, the difference between the rate of change of the first period and second period could be larger.
 
 ## Future Work
 
