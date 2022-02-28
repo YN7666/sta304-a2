@@ -100,7 +100,7 @@ By dataset “age_race_comp_seer”, we generated three graphs for the female po
 
 - Figure 2:
 
-We used the dataset provided by the authors to reproduce figure1, which is named as “Births per 1,000 women age 15_44”. In the process, we simply take year as the x axis and brate_all as the y axis for the graph and plot it by ggplot line.
+We used the dataset provided by the authors to reproduce figure2, which is named as “Births per 1,000 women age 15_44”. In the process, we simply take year as the x axis and brate_all as the y axis for the graph and plot it by ggplot line.
 
 - Figure 3, Panel A and B: 
 
